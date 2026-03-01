@@ -8,6 +8,7 @@ Aplicación web (HTML/CSS/JS) para crear líneas de tiempo por temas con:
 - eventos con fecha, descripción, imagen y link,
 - periodos entre fechas,
 - edición y eliminación de eventos/periodos,
+- vista general grande con selección de una o varias líneas para verlas juntas,
 - persistencia local en `localStorage`.
 
 ## ¿Cómo ponerlo en marcha? (paso a paso)
