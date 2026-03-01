@@ -112,6 +112,83 @@ button:hover {
   gap: 0.85rem;
 }
 
+.overview-panel p {
+  margin-top: 0.2rem;
+  color: var(--muted);
+}
+
+.overview-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0.9rem;
+}
+
+.overview-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.86rem;
+}
+
+.overview-chip .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.overview-canvas {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fbfdff;
+  min-height: 240px;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.overview-empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.overview-line {
+  border: 1px dashed #cfd8ea;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.6rem;
+}
+
+.overview-line h4 {
+  margin: 0 0 0.45rem;
+}
+
+.overview-track {
+  list-style: none;
+  margin: 0;
+  padding: 0.8rem;
+  display: flex;
+  gap: 0.8rem;
+  overflow: auto;
+}
+
+.overview-track.horizontal {
+  border-top: 10px solid var(--line-color);
+}
+
+.overview-track.vertical {
+  border-left: 10px solid var(--line-color);
+  flex-direction: column;
+}
+
+.timeline-item.period {
+  box-shadow: inset 0 0 0 2px rgba(8, 145, 178, 0.25);
+}
+
 .track-wrap {
   margin-top: 1rem;
   overflow: auto;
@@ -128,13 +205,13 @@ button:hover {
 }
 
 .timeline-track.horizontal {
-  border-top: 4px solid var(--line-color);
+  border-top: 10px solid var(--line-color);
   flex-direction: row;
   align-items: flex-start;
 }
 
 .timeline-track.vertical {
-  border-left: 4px solid var(--line-color);
+  border-left: 10px solid var(--line-color);
   flex-direction: column;
   min-height: 0;
 }
@@ -204,6 +281,12 @@ button:hover {
   .timeline-track.horizontal {
     flex-direction: column;
     border-top: none;
-    border-left: 4px solid var(--line-color);
+    border-left: 10px solid var(--line-color);
+  }
+
+  .overview-track.horizontal {
+    flex-direction: column;
+    border-top: none;
+    border-left: 10px solid var(--line-color);
   }
 }
