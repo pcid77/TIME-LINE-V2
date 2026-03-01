@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor de Time Lines</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Editor de Time Lines Multitema</h1>
+      <p>
+        Crea varias líneas de tiempo por tema, cambia su color, alterna vista
+        horizontal/vertical y añade eventos o periodos editables.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="panel creator-panel">
+        <h2>Nueva línea de tiempo</h2>
+        <form id="line-form" class="stack-form">
+          <label>
+            Nombre de la línea
+            <input name="name" type="text" placeholder="Ej: Historia del Arte" required />
+          </label>
+          <label>
+            Color de la línea
+            <input name="color" type="color" value="#2563eb" />
+          </label>
+          <label>
+            Vista inicial
+            <select name="orientation">
+              <option value="horizontal">Horizontal (izquierda → derecha)</option>
+              <option value="vertical">Vertical</option>
+            </select>
+          </label>
+          <button type="submit">Crear línea</button>
+        </form>
+      </section>
+
+      <section id="timelines" class="timelines"></section>
+    </main>
+
+    <template id="timeline-template">
+      <article class="timeline-card">
+        <header class="timeline-header">
+          <div>
+            <h3 class="timeline-title"></h3>
+            <p class="timeline-subtitle"></p>
+          </div>
+          <div class="timeline-actions">
+            <label>
+              Color
+              <input class="line-color-input" type="color" />
+            </label>
+            <label>
+              Vista
+              <select class="orientation-select">
+                <option value="horizontal">Horizontal</option>
+                <option value="vertical">Vertical</option>
+              </select>
+            </label>
+            <button class="remove-line-btn" type="button">Eliminar línea</button>
+          </div>
+        </header>
+
+        <div class="adders">
+          <form class="item-form event-form">
+            <h4>Añadir evento</h4>
+            <label>
+              Título
+              <input name="title" type="text" required />
+            </label>
+            <label>
+              Fecha
+              <input name="date" type="date" required />
+            </label>
+            <label>
+              Descripción
+              <textarea name="description" rows="2" placeholder="Detalles del evento"></textarea>
+            </label>
+            <label>
+              URL de imagen
+              <input name="image" type="url" placeholder="https://..." />
+            </label>
+            <label>
+              Link de referencia
+              <input name="link" type="url" placeholder="https://..." />
+            </label>
+            <button type="submit">Guardar evento</button>
+          </form>
+
+          <form class="item-form period-form">
+            <h4>Añadir periodo</h4>
+            <label>
+              Nombre del periodo
+              <input name="title" type="text" required />
+            </label>
+            <label>
+              Fecha inicio
+              <input name="startDate" type="date" required />
+            </label>
+            <label>
+              Fecha fin
+              <input name="endDate" type="date" required />
+            </label>
+            <label>
+              Descripción
+              <textarea name="description" rows="2" placeholder="Contexto del periodo"></textarea>
+            </label>
+            <button type="submit">Guardar periodo</button>
+          </form>
+        </div>
+
+        <div class="track-wrap">
+          <ol class="timeline-track"></ol>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
